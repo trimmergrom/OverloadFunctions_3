@@ -7,25 +7,38 @@
 using namespace std;
 const unsigned int ROWS = 5;
 const unsigned int COLS = 5;
+
 void ArrRand(int arr[], int arr_1[], const unsigned int n, int minRand, int maxRand);
 void ArrRand(double arr[], double arr_1[], const unsigned int n, int minRand, int maxRand);
 void ArrRand(int arr[ROWS][COLS], int arr_1[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int minRand, int maxRand);
 void ArrRand(double arr[ROWS][COLS], double arr_1[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int minRand, int maxRand);
+
 template<typename T> void Print(T arr[], const unsigned int n);
 template<typename T> void Print(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+
 template<typename T> void ReversPrint(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
 template<typename T> void ReversPrint(T arr[], const unsigned n);
+
 template<typename T> T Summ(T arr[], const unsigned int n);
 template<typename T> T Summ(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+
 template<typename T> T Avg(T summ, const unsigned int n);
 template<typename T> T Avg(T summ, const unsigned int ROWS, const unsigned int COLS);
+
 template<typename T> T MaxValue(T arr[], const unsigned int n);
 template<typename T> T MinValue(T arr[], const unsigned int n);
+template<typename T> T MaxValue(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+template<typename T> T MinValue(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+
 template<typename T> void SortArr(T arr[], const unsigned int n);
 template<typename T> void SortArr(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+
 template<typename T> void ShiftManager(T arr[], T arr_1[], const unsigned int n);
 template<typename T> void Shift_Rigth(T arr[], T arr_1[], const unsigned int n, int shift);
 template<typename T> void Shift_Left(T arr[], T arr_1[], const unsigned int n, int shift);
+template<typename T> void ShiftManager(T arr[ROWS][COLS], T arr_1[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+template<typename T> void Shift_Rigth(T arr[ROWS][COLS], T arr_1[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift);
+template<typename T> void Shift_Left(T arr[ROWS][COLS], T arr_1[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift);
 
 int main()
 {
@@ -66,18 +79,22 @@ int main()
 	ArrRand(arr_2, arr1_2, ROWS, COLS, minRand, maxRand);
 	cout << "Parent INTEGER 2D Array:\n"; Print(arr_2, ROWS, COLS);
 	cout << "\nRevers INTEGER 2D Array:\n"; ReversPrint(arr_2, ROWS, COLS);
-	SortArr(arr_2, ROWS, COLS);
-	cout << " Sorted INTEGER 2D Array:\n"; Print(arr_2, ROWS, COLS);
+	SortArr(arr_2, ROWS, COLS); cout << " Sorted INTEGER 2D Array:\n"; Print(arr_2, ROWS, COLS);
 	cout << " Summa INTEGER 2D Array = " << Summ(arr_2, ROWS, COLS) << endl << endl;
 	cout << " Arithmetic average of INTEGER 2D Array elements  = " << Avg(Summ(arr_2, ROWS, COLS), ROWS, COLS) << endl << endl;
-	//cout << "\tMAX value of INTEGER 2D Array elements = " << MaxValue(arr_2, ROWS, COLS) << endl << endl;
-	//cout << "\tMIN value of INTEGER 2D Array elements = " << MinValue(arr_2, ROWS, COLS) << endl << endl;
+	cout << "\tMAX value of INTEGER 2D Array elements = " << MaxValue(arr_2, ROWS, COLS) << endl << endl;
+	cout << "\tMIN value of INTEGER 2D Array elements = " << MinValue(arr_2, ROWS, COLS) << endl << endl;
+	ShiftManager(arr_2, arr1_2, ROWS, COLS);
 	cout << delimiter;
 	ArrRand(arr_2DB, arr1_2DB, ROWS, COLS, minRand, maxRand);
 	cout << "Parent DOUBLE 2D Array:\n"; Print(arr_2DB, ROWS, COLS);
 	cout << "\nRevers DOUBLE 2D Array:\n"; ReversPrint(arr_2DB, ROWS, COLS);
-	SortArr(arr_2DB, ROWS, COLS);
-	cout << "\nSorted DOUBLE 2D Array:\n"; Print(arr_2DB, ROWS, COLS);
+	SortArr(arr_2DB, ROWS, COLS); cout << "\nSorted DOUBLE 2D Array:\n"; Print(arr_2DB, ROWS, COLS);
+	cout << " Summa DOUBLE 2D Array = " << Summ(arr_2DB, ROWS, COLS) << endl << endl;
+	cout << " Arithmetic average of DOUBLE 2D Array elements  = " << Avg(Summ(arr_2DB, ROWS, COLS), ROWS, COLS) << endl << endl;
+	cout << "\tMAX value of DOUBLE 2D Array elements = " << MaxValue(arr_2DB, ROWS, COLS) << endl << endl;
+	cout << "\tMIN value of DOUBLE 2D Array elements = " << MinValue(arr_2DB, ROWS, COLS) << endl << endl;
+	ShiftManager(arr_2DB, arr1_2DB, ROWS, COLS);
 	cout << delimiter;
 
 	return 0;
@@ -126,6 +143,7 @@ void ArrRand(double arr[ROWS][COLS], double arr_1[ROWS][COLS], const unsigned in
 		}
 	}
 }
+
 template<typename T> void Print(T arr[], const unsigned int n)
 {
 	for (int i = 0; i < n; i++)
@@ -145,6 +163,7 @@ template<typename T> void Print(T arr[ROWS][COLS], const unsigned int ROWS, cons
 		cout << endl;
 	}
 }
+
 template<typename T> void ReversPrint(T arr[], const unsigned n)
 {
 	for (int i = n - 1; i >= 0; i--)
@@ -164,6 +183,7 @@ template<typename T> void ReversPrint(T arr[ROWS][COLS], const unsigned int ROWS
 		cout << endl;
 	}
 }
+
 template<typename T> T Summ(T arr[], const unsigned int n)
 {
 	T summ = 0;
@@ -185,6 +205,7 @@ template<typename T> T Summ(T arr[ROWS][COLS], const unsigned int ROWS, const un
 	}
 	return summ;
 }
+
 template<typename T> T Avg(T summ, const unsigned int n)
 {
 	return (double)summ/ n;
@@ -193,6 +214,7 @@ template<typename T> T Avg(T summ, const unsigned int ROWS, const unsigned int C
 {
 	return (double)summ / (ROWS * COLS);
 }
+
 template<typename T> T MaxValue(T arr[], const unsigned int n)
 {
 	T max = arr[0];
@@ -211,6 +233,31 @@ template<typename T> T MinValue(T arr[], const unsigned int n)
 	}
 	return min;
 }
+template<typename T> T MaxValue(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+{
+	T max = arr[0][0];
+	for (int i = 1; i < ROWS; i++)
+	{
+		for(int j = 1; j < COLS; j++)
+		{
+			if (max < arr[i][j]) { max = arr[i][j]; }
+		}
+	}
+	return max;
+}
+template<typename T> T MinValue(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+{
+	T min = arr[0][0];
+	for (int i = 1; i < ROWS; i++)
+	{
+		for (int j = 1; j < COLS; j++)
+		{
+			if (min > arr[i][j]) { min = arr[i][j]; }
+		}
+	}
+	return min;
+}
+
 template<typename T> void SortArr(T arr[], const unsigned int n)
 {
 	int j = 0;
@@ -253,6 +300,7 @@ template<typename T> void SortArr(T arr[ROWS][COLS], const unsigned int ROWS, co
 		}
 	}
 }
+
 template<typename T> void ShiftManager(T arr[], T arr_1[], const unsigned int n)
 {
 	int shift;
@@ -306,5 +354,82 @@ template<typename T> void Shift_Left(T arr[], T arr_1[], const unsigned int n, i
 	for (int i = 0; i < n; i++)
 	{
 		cout << arr_1[i] << "\t";
+	}
+}
+template<typename T> void ShiftManager(T arr[ROWS][COLS], T arr_1[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
+{
+	int shift;
+	char e;
+	do
+	{
+		cout << "Enter Shift from 1 to " << COLS - 1 << "\n";
+		cout << "To shift the array to the right, enter a positive number" << endl;
+		cout << "To shift the aray to the left, enter a negative namber" << endl;
+		cin >> shift; cout << endl;
+		shift >= 0 ? Shift_Rigth(arr, arr_1, ROWS, COLS, shift) : Shift_Left(arr, arr_1, ROWS, COLS, shift);
+		cout << "\n\n To continue the shift, press any key, to continue the program, press Esc" << endl;
+		e = _getch();
+	} while (e != 27);
+}
+template<typename T> void Shift_Rigth(T arr[ROWS][COLS], T arr_1[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < shift; j++)
+		{
+			arr[i][j] = arr_1[i][COLS - shift + j];
+		}
+		for (int j = shift; j < COLS; j++)
+		{
+			arr[i][j] = arr_1[i][j - shift];
+		}
+	}
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	cout << " The DOUBLE 2D Array is shifted to the RIGTH by " << shift << " elements\n" << endl;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr_1[i][j] << "\t";
+		}
+		cout << endl;
+	}
+}
+template<typename T> void Shift_Left(T arr[ROWS][COLS], T arr_1[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift)
+{
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS - abs(shift); j++)
+		{
+			arr[i][j] = arr_1[i][j + abs(shift)];
+		}
+		for (int j = COLS - abs(shift); j < COLS; j++)
+		{
+			arr[i][j] = arr_1[i][j - COLS + abs(shift)];
+		}
+	}
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr[i][j] << "\t";
+		}
+		cout << endl;
+	}
+	cout << " The DOUBLE 2D Array is shifted to the LEFT by " << abs(shift) << " elements\n" << endl;
+	for (int i = 0; i < ROWS; i++)
+	{
+		for (int j = 0; j < COLS; j++)
+		{
+			cout << arr_1[i][j] << "\t";
+		}
+		cout << endl;
 	}
 }
