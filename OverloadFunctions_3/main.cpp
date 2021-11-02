@@ -2,11 +2,11 @@
 #include <Windows.h>
 #include <cmath>
 #include <conio.h>
+#include "Constants.h"
 #define delimiter "\n===================================================================\n"
 
 using namespace std;
-const unsigned int ROWS = 5;
-const unsigned int COLS = 5;
+
 
 void ArrRand(int arr[], int arr_1[], const unsigned int n, int minRand, int maxRand);
 void ArrRand(double arr[], double arr_1[], const unsigned int n, int minRand, int maxRand);
