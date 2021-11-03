@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #include "Print.h"
 
-template<typename T> void Print(T arr[], const unsigned int n)
+template<typename T> void Print(T arr[n], const unsigned int n)
 {
 	for (int i = 0; i < n; i++)
 	{
@@ -22,7 +22,7 @@ template<typename T> void Print(T arr[ROWS][COLS], const unsigned int ROWS, cons
 	}
 }
 
-template<typename T> void ReversPrint(T arr[], const unsigned n)
+template<typename T> void ReversPrint(T arr[n], const unsigned n)
 {
 	for (int i = n - 1; i >= 0; i--)
 	{
