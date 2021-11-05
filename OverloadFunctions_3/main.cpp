@@ -68,7 +68,7 @@ int main()
 	ArrRand(arr_2, arr1_2, ROWS, COLS, minRand, maxRand);
 	std::cout << "Parent INTEGER 2D Array:\n"; Print(arr_2, ROWS, COLS);
 	std::cout << "\nRevers INTEGER 2D Array:\n"; ReversPrint(arr_2, ROWS, COLS);
-	SortArr(arr_2, ROWS, COLS); std::cout << " Sorted INTEGER 2D Array:\n"; //Print(arr_2, ROWS, COLS);
+	SortArr(arr_2, ROWS, COLS); std::cout << " Sorted INTEGER 2D Array:\n"; Print(arr_2, ROWS, COLS);
 	std::cout << " Summa INTEGER 2D Array = " << Summ(arr_2, ROWS, COLS) << std::endl;
 	std::cout << " Arithmetic average of INTEGER 2D Array elements  = " << Avg(Summ(arr_2, ROWS, COLS), ROWS, COLS) << std::endl;
 	std::cout << "\tMAX value of INTEGER 2D Array elements = " << MaxValue(arr_2, ROWS, COLS) << std::endl;
@@ -78,7 +78,7 @@ int main()
 	ArrRand(arr_2DB, arr1_2DB, ROWS, COLS, minRand, maxRand);
 	std::cout << "Parent DOUBLE 2D Array:\n"; Print(arr_2DB, ROWS, COLS);
 	std::cout << "\nRevers DOUBLE 2D Array:\n"; ReversPrint(arr_2DB, ROWS, COLS);
-	SortArr(arr_2DB, ROWS, COLS); std::cout << "\nSorted DOUBLE 2D Array:\n"; //Print(arr_2DB, ROWS, COLS);
+	SortArr(arr_2DB, ROWS, COLS); std::cout << "\nSorted DOUBLE 2D Array:\n"; Print(arr_2DB, ROWS, COLS);
 	std::cout << " Summa DOUBLE 2D Array = " << Summ(arr_2DB, ROWS, COLS) << std::endl;
 	std::cout << " Arithmetic average of DOUBLE 2D Array elements  = " << Avg(Summ(arr_2DB, ROWS, COLS), ROWS, COLS) << std::endl;
 	std::cout << "\tMAX value of DOUBLE 2D Array elements = " << MaxValue(arr_2DB, ROWS, COLS) << std::endl;
