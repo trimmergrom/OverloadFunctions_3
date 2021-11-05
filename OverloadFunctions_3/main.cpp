@@ -32,9 +32,6 @@ template<typename T> void ShiftManager(T arr[ROWS][COLS], T arr_1[ROWS][COLS], c
 template<typename T> void Shift_Rigth(T arr[ROWS][COLS], T arr_1[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift);
 template<typename T> void Shift_Left(T arr[ROWS][COLS], T arr_1[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS, int shift);
 
-
-
-
 int main()
 {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -96,6 +93,7 @@ int main()
 
 	return 0;
 }
+
 void ArrRand(int arr[], int arr_1[], const unsigned int n, int minRand, int maxRand)
 {
 	for (int i = 0; i < n; i++)
