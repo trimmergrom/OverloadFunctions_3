@@ -55,6 +55,7 @@ int main()
 	Print(arr, n);
 	std::cout << " Revers INTEGER Array\n";
 	ReversPrint(arr, n);
+	std::cout << "The array is sorted in ascending order\n";
 	SortArr(arr, n);
 	std::cout << " Summa INTEGER Array = " << Summ(arr, n) << std::endl;
 	std::cout << " Arithmetic average of INTEGER Array elements  = " << Avg((double)Summ(arr, n), n) << std::endl;
@@ -270,8 +271,7 @@ template<typename T> void SortArr(T arr[], const unsigned int n)
 	for (int i = 0; i < n; i++)
 	{
 		std::cout << arr[i] << "\t";
-	}
-	std::cout << "The array is sorted in ascending order" << std::endl;
+	}	
 }
 template<typename T> void SortArr(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS)
 {
