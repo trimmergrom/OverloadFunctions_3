@@ -11,3 +11,5 @@ template<typename T> T MaxValue(T arr[ROWS][COLS], const unsigned int ROWS, cons
 template<typename T> T MinValue(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
 template<typename T> void SortArr(T arr[], const unsigned int n);
 template<typename T> void SortArr(T arr[ROWS][COLS], const unsigned int ROWS, const unsigned int COLS);
+
+//#include"Statistics.cpp"

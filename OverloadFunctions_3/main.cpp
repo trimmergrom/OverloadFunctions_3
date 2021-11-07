@@ -2,8 +2,11 @@
 #include "Constants.h"
 #include "FillRand.h"
 #include "Print.h"
+#include "Print.cpp"
 #include "Statistics.h"
+#include "Statistics.cpp"
 #include "Shift.h"
+#include "Shift.cpp"
 #define delimiter "\n===================================================================\n"
 
 int main()
